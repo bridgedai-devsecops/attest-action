@@ -1,0 +1,45 @@
+name: 'BridgedAI Attest'
+description: 'Create in-toto/DSSE attestations and optionally sign/verify with cosign/GitHub attestations.'
+branding:
+  icon: 'shield'
+  color: 'blue'
+inputs:
+  subject-name:
+    required: true
+  subject-digest:
+    required: true
+  predicate-type:
+    required: true
+  predicate-file:
+    required: true
+  attestation-file:
+    required: true
+  mode:
+    description: 'create-only | sign | verify'
+    required: false
+    default: 'create-only'
+  signer:
+    description: 'cosign | github-attestation'
+    required: false
+    default: 'cosign'
+  upload-to-rekor:
+    required: false
+    default: 'false'
+  verify-rekor:
+    required: false
+    default: 'false'
+  expected-issuer:
+    required: false
+    default: ''
+  expected-identity:
+    required: false
+    default: ''
+  expected-repo:
+    required: false
+    default: ''
+  expected-workflow:
+    required: false
+    default: ''
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

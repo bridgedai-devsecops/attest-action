@@ -1,0 +1,6 @@
+node_modules/
+dist-ts/
+coverage/
+*.log
+.DS_Store
+.bridgedai/
