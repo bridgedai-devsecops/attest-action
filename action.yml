@@ -1,18 +1,24 @@
 name: 'BridgedAI Attest'
 description: 'Create in-toto/DSSE attestations and optionally sign/verify with cosign/GitHub attestations.'
+author: 'BridgedAI'
 branding:
   icon: 'shield'
   color: 'blue'
 inputs:
   subject-name:
+    description: 'Subject name for the attestation (e.g. OCI image reference).'
     required: true
   subject-digest:
+    description: 'Canonical subject digest (sha256:…).'
     required: true
   predicate-type:
+    description: 'Predicate type URI for the in-toto statement.'
     required: true
   predicate-file:
+    description: 'Path to a JSON file containing the predicate payload.'
     required: true
   attestation-file:
+    description: 'Path where the attestation JSON should be written.'
     required: true
   mode:
     description: 'create-only | sign | verify'
@@ -23,21 +29,27 @@ inputs:
     required: false
     default: 'cosign'
   upload-to-rekor:
+    description: 'When true, upload signatures/metadata to Rekor where applicable.'
     required: false
     default: 'false'
   verify-rekor:
+    description: 'When true, verify Rekor transparency log entries where applicable.'
     required: false
     default: 'false'
   expected-issuer:
+    description: 'Optional issuer constraint for signature/GitHub attestation verification.'
     required: false
     default: ''
   expected-identity:
+    description: 'Optional signer identity constraint for verification.'
     required: false
     default: ''
   expected-repo:
+    description: 'Optional repository constraint for verification.'
     required: false
     default: ''
   expected-workflow:
+    description: 'Optional workflow ref constraint for verification.'
     required: false
     default: ''
 runs:
