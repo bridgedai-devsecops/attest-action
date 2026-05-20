@@ -21,7 +21,7 @@ inputs:
     description: 'Path where the attestation JSON should be written.'
     required: true
   mode:
-    description: 'create-only | sign | verify'
+    description: 'create-only | sign | verify | github-attestation (GitHub Artifact Attestations bundle from actions/attest-build-provenance)'
     required: false
     default: 'create-only'
   signer:
