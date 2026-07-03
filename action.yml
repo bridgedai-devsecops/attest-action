@@ -52,6 +52,12 @@ inputs:
     description: 'Optional workflow ref constraint for verification.'
     required: false
     default: ''
+  organization-id:
+    description: 'BridgedAI organization id for emitted signal envelopes. Defaults to BRIDGEDAI_ORG_ID/BRIDGED_ORG_ID.'
+    required: false
+  org-id:
+    description: 'Alias for organization-id.'
+    required: false
 runs:
   using: 'node20'
   main: 'dist/index.js'
